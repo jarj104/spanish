@@ -1,0 +1,58 @@
+Accent code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoCopy Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    .copy-text {
+      font-size: 48px; /* Updated font size to 48px */
+      cursor: pointer;
+      user-select: none;
+      margin: 5px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="copy-text" onclick="copyText('á')">á</div>
+  <div class="copy-text" onclick="copyText('é')">é</div>
+  <div class="copy-text" onclick="copyText('í')">í</div>
+  <div class="copy-text" onclick="copyText('ó')">ó</div>
+  <div class="copy-text" onclick="copyText('ú')">ú</div>
+  <div class="copy-text" onclick="copyText('ñ')">ñ</div>
+  <div class="copy-text" onclick="copyText('¿')">¿</div>
+  <div class="copy-text" onclick="copyText('¡')">¡</div>
+
+  <script>
+    function copyText(text) {
+      // Create a dummy textarea element
+      var dummyTextarea = document.createElement("textarea");
+
+      // Set the value to the text you want to copy
+      dummyTextarea.value = text;
+
+      // Append the textarea to the document
+      document.body.appendChild(dummyTextarea);
+
+      // Select the text in the textarea
+      dummyTextarea.select();
+
+      // Copy the selected text
+      document.execCommand("copy");
+
+      // Remove the textarea from the document
+      document.body.removeChild(dummyTextarea);
+    }
+  </script>
+
+</body>
+</html>
